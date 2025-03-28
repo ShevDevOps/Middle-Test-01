@@ -37,6 +37,21 @@ def same(lines1 : List[str], lines2 : List[str]) -> List[str]:
 
 
 def diff(first_file: list[str], second_file: list[str]) -> list[str]:
+    """
+    Compares two lists of strings and returns a list of unique lines.
+    """
+    for a in range(len(first_file)):
+        line = first_file[a]
+        line = str(line)
+        first_file[a] = line
+
+    for b in range(len(second_file)):
+        line = second_file[b]
+        line = str(line)
+        second_file[b] = line
+
+    line = None
+
     unique_lines = []
     for line in first_file:
         if line not in second_file:
