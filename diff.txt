@@ -1,2 +1,0 @@
-Унікальний рядок:Line 3: This line is unique to the first file.    Для файлу 1
-Унікальний рядок:Line 3: This line is unique to the second file.    Для файлу 1
