@@ -2,7 +2,14 @@ import os
 
 def read_file(file_path): pass
     
-def same(lines1, lines2): pass
+def same(lines1, lines2):
+    result = []
+    for line1 in lines1:
+        for line2 in lines2:
+            if line1 == line2:
+                result.append(line2)
+                break
+    return result
 
 def diff(lines1, lines2): pass
 
