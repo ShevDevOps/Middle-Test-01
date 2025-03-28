@@ -28,8 +28,10 @@ def diff(first_file: list[str], second_file: list[str]) -> list[str]:
     
     return unique_lines
 
-def write_to_file(file_path, lines): pass
 
+def write_to_file(file_path, lines): 
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write('\n'.join(lines))
 
 def main(): 
     file1 = 'file1.txt'
