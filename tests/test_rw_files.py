@@ -23,4 +23,11 @@ def test_read_file_not_found() -> None:
     """Checks that if the file does not exist, a FileNotFoundError is raised."""
     with pytest.raises(FileNotFoundError):
         read_file("non_existent_file.txt")
+
+def test_read_file_empty(tmpdir) -> None:
+    """Test that the function `read_file` returns an empty set for an empty file."""
+    empty_file = tmpdir.join("empty.txt")
+    empty_file.write("")
+    lines = read_file(str(empty_file))
+    assert lines == set()
  
