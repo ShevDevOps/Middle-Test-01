@@ -1,6 +1,11 @@
 import os
 
-def read_file(file_path): pass
+def read_file(file_path): 
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Файл {file_path} не знайдено.")
+    
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return set(file.read().splitlines())
     
 def same(lines1, lines2):
     result = []
