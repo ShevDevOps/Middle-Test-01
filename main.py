@@ -7,7 +7,14 @@ def read_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return set(file.read().splitlines())
     
-def same(lines1, lines2): pass
+def same(lines1, lines2):
+    result = []
+    for line1 in lines1:
+        for line2 in lines2:
+            if line1 == line2:
+                result.append(line2)
+                break
+    return result
 
 def diff(first_file: list[str], second_file: list[str]) -> list[str]:
     unique_lines = []
