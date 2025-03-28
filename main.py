@@ -1,6 +1,5 @@
 import os
-from typing import Iterable, Set
-
+from typing import Iterable, Set, List
 
 def read_file(file_path: str) -> Set[str]:
     """
@@ -18,9 +17,16 @@ def read_file(file_path: str) -> Set[str]:
 
     with open(file_path, "r", encoding="utf-8") as file:
         return set(file.read().splitlines())
-
-
-def same(lines1, lines2):
+    
+def same(lines1 : List[str], lines2 : List[str]) -> List[str]:
+    """
+    Returns list with lines that are in both in input lists
+    Parametrs:
+        lines1 (List[str]): first list
+        lines2 (List[str]): second list
+    Returns:
+        List[str]: list containing lines that are in both in input lists 
+    """
     result = []
     for line1 in lines1:
         for line2 in lines2:
