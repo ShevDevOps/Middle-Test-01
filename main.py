@@ -1,6 +1,7 @@
 import os
 from typing import Iterable, Set, List
 
+
 def read_file(file_path: str) -> Set[str]:
     """
     Reads a file and returns a set lines.
@@ -17,15 +18,16 @@ def read_file(file_path: str) -> Set[str]:
 
     with open(file_path, "r", encoding="utf-8") as file:
         return set(file.read().splitlines())
-    
-def same(lines1 : List[str], lines2 : List[str]) -> List[str]:
+
+
+def same(lines1: List[str], lines2: List[str]) -> List[str]:
     """
     Returns list with lines that are in both in input lists
     Parametrs:
         lines1 (List[str]): first list
         lines2 (List[str]): second list
     Returns:
-        List[str]: list containing lines that are in both in input lists 
+        List[str]: list containing lines that are in both in input lists
     """
     result = []
     for line1 in lines1:
@@ -37,6 +39,21 @@ def same(lines1 : List[str], lines2 : List[str]) -> List[str]:
 
 
 def diff(first_file: list[str], second_file: list[str]) -> list[str]:
+    """
+    Compares two lists of strings and returns a list of unique lines.
+    """
+    for a in range(len(first_file)):
+        line = first_file[a]
+        line = str(line)
+        first_file[a] = line
+
+    for b in range(len(second_file)):
+        line = second_file[b]
+        line = str(line)
+        second_file[b] = line
+
+    line = None
+
     unique_lines = []
     for line in first_file:
         if line not in second_file:
