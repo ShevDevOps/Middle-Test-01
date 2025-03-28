@@ -1,6 +1,16 @@
 import os
+from typing import Iterable, Set
 
-def read_file(file_path): 
+def read_file(file_path: str) -> Set[str]:
+    """
+    Reads a file and returns a set lines.
+    Parameters:
+        file_path (str): Path to the file.
+    Returns:
+        Set[str]: A set containing unique lines from the file.
+    Raises:
+        :FileNotFoundError: If the specified file does not exist.
+    """
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Файл {file_path} не знайдено.")
     
@@ -29,7 +39,15 @@ def diff(first_file: list[str], second_file: list[str]) -> list[str]:
     return unique_lines
 
 
-def write_to_file(file_path, lines): 
+def write_to_file(file_path: str, lines: Iterable[str]) -> None:
+    """
+    Writes a list of lines to a file, separating them with newline characters.
+    Parameters:
+        file_path (str): Path to the file where data will be written.
+        lines (Iterable[str]): A collection of strings to write to the file.
+    Returns:
+        None
+    """ 
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write('\n'.join(lines))
 
